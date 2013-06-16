@@ -2,15 +2,15 @@
 #include<complex.h>
 #include<math.h>
 
-/*[[[[ƒvƒƒgƒ^ƒCƒvéŒ¾[[[[*/
+/*ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ—ãƒ­ãƒˆã‚¿ã‚¤ãƒ—å®£è¨€ãƒ¼ãƒ¼ãƒ¼ãƒ¼*/
 double _Complex Q_minus(int N, int n, double _Complex q);
 double _Complex Q_plus(int N, int n, double _Complex q);
 
 
-/*[[[[ƒƒCƒ“ŠÖ”[[[[*/
+/*ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¡ã‚¤ãƒ³é–¢æ•°ãƒ¼ãƒ¼ãƒ¼ãƒ¼*/
 int main(void){
 	int N,n;
-	for(N=2162; N<2164; N++){
+	for(N=2; N<2164; N++){
 		double _Complex q = cexp(2*M_PI*I/N);
 		double _Complex a = cexp(M_PI*I/N);
 		long double _Complex J=0;
@@ -18,15 +18,15 @@ int main(void){
 		for(n=0; n<=N-1; n++){
 			J = J + pow(-1,n) * cpow(a,-n*(n+1)) * Q_minus(N,n,q) * Q_plus(N,n,q);
 		}
-		printf("N=%dF%.60lf\n\n",N,log(cabs(J))/N);
+		printf("N=%dï¼š%.60lf\n\n",N,log(cabs(J))/N);
 	}
 	return 0;
 }
 
-/*[[[[ƒTƒuŠÖ”[[[[*/
+/*ãƒ¼ãƒ¼ãƒ¼ãƒ¼ã‚µãƒ–é–¢æ•°ãƒ¼ãƒ¼ãƒ¼ãƒ¼*/
 double _Complex Q_minus(int N, int n, double _Complex q) {
-	int i,l;			//ƒJƒEƒ“ƒg—p
-	long double _Complex re_value = 1;	//–ß‚è’l—p‚Ì•Ï”éŒ¾
+	int i,l;			//ã‚«ã‚¦ãƒ³ãƒˆç”¨
+	long double _Complex re_value = 1;	//æˆ»ã‚Šå€¤ç”¨ã®å¤‰æ•°å®£è¨€
 	if(n == 0) return 1;
 	else {
 		for(l=1; l<=n; l++){
@@ -38,8 +38,8 @@ double _Complex Q_minus(int N, int n, double _Complex q) {
 }
 
 double _Complex Q_plus(int N, int n, double _Complex q) {
-	int i,l;			//ƒJƒEƒ“ƒg—p
-	long double _Complex re_value = 1;	//–ß‚è’l—p‚Ì•Ï”éŒ¾
+	int i,l;			//ã‚«ã‚¦ãƒ³ãƒˆç”¨
+	long double _Complex re_value = 1;	//æˆ»ã‚Šå€¤ç”¨ã®å¤‰æ•°å®£è¨€
 	if(n == 0) return 1;
 	else {
 		for(l=1; l<=n; l++){

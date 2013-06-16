@@ -2,11 +2,10 @@
 #include<complex.h>
 #include<math.h>
 
-/*[[[[ƒOƒ[ƒoƒ‹•Ï”[[[[*/
+/*ãƒ¼ãƒ¼ãƒ¼ãƒ¼ã‚°ãƒ­ãƒ¼ãƒãƒ«å¤‰æ•°ãƒ¼ãƒ¼ãƒ¼ãƒ¼*/
 int N=0;
 
-
-/*[[[[ƒvƒƒgƒ^ƒCƒvéŒ¾[[[[*/
+/*ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ—ãƒ­ãƒˆã‚¿ã‚¤ãƒ—å®£è¨€ãƒ¼ãƒ¼ãƒ¼ãƒ¼*/
 double _Complex Q_minus(int n, double _Complex q);
 double _Complex Q_plus(int n, double _Complex q);
 
@@ -28,7 +27,7 @@ foo(A);
 foo(B);
 int printf(char const*, ...)*/
 
-/*[[[[ƒƒCƒ“ŠÖ”[[[[*/
+/*ãƒ¼ãƒ¼ãƒ¼ãƒ¼ãƒ¡ã‚¤ãƒ³é–¢æ•°ãƒ¼ãƒ¼ãƒ¼ãƒ¼*/
 int main(void){
 	int n;
 	for(N=2; N<200; N++){
@@ -39,16 +38,16 @@ int main(void){
 			J = J + cpow(q,n) * Q_minus(n,q) * Q_plus(n,q);
 		}
 //		printf("bug=%.25lf  %.25lf\n",creal(q),cimag(q));
-		printf("N=%dF%.60lf\n",N,log(cabs(J))/N);
+		printf("N=%dï¼š%.60lf\n",N,log(cabs(J))/N);
 //		printf("test:%.20lf\n",log(4*sqrt(7))/3);
 	}
 	return 0;
 }
 
-/*[[[[ƒTƒuŠÖ”[[[[*/
+/*ãƒ¼ãƒ¼ãƒ¼ãƒ¼ã‚µãƒ–é–¢æ•°ãƒ¼ãƒ¼ãƒ¼ãƒ¼*/
 double _Complex Q_minus(int n, double _Complex q) {
-	int i,l;			//ƒJƒEƒ“ƒg—p
-	long double _Complex re_value = 1;	//–ß‚è’l—p‚Ì•Ï”éŒ¾
+	int i,l;			//ã‚«ã‚¦ãƒ³ãƒˆç”¨
+	long double _Complex re_value = 1;	//æˆ»ã‚Šå€¤ç”¨ã®å¤‰æ•°å®£è¨€
 	if(n == 0) return 1;
 	else {
 		for(l=1; l<=n; l++){
@@ -59,8 +58,8 @@ double _Complex Q_minus(int n, double _Complex q) {
 }
 
 double _Complex Q_plus(int n, double _Complex q) {
-	int i,l;			//ƒJƒEƒ“ƒg—p
-	long double _Complex re_value = 1;	//–ß‚è’l—p‚Ì•Ï”éŒ¾
+	int i,l;			//ã‚«ã‚¦ãƒ³ãƒˆç”¨
+	long double _Complex re_value = 1;	//æˆ»ã‚Šå€¤ç”¨ã®å¤‰æ•°å®£è¨€
 	if(n == 0) return 1;
 	else {
 		for(l=1; l<=n; l++){

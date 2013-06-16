@@ -2,11 +2,11 @@
 #include<complex.h>
 #include<math.h>
 
-/*[[[ƒOƒ[ƒoƒ‹•Ï”[[[*/
+/*ãƒ¼ãƒ¼ãƒ¼ã‚°ãƒ­ãƒ¼ãƒãƒ«å¤‰æ•°ãƒ¼ãƒ¼ãƒ¼*/
 int m,N,P;
 int k[4]={0,0,0,0};
 
-/*[[[ƒTƒuŠÖ”‚Ìƒvƒƒgƒ^ƒCƒvéŒ¾[[[*/
+/*ãƒ¼ãƒ¼ãƒ¼ã‚µãƒ–é–¢æ•°ã®ãƒ—ãƒ­ãƒˆã‚¿ã‚¤ãƒ—å®£è¨€ãƒ¼ãƒ¼ãƒ¼*/
 double _Complex f(int p, int n, double _Complex q);
 double _Complex Q_minus(int n, double _Complex q);
 double _Complex Q_plus(int n, double _Complex q);
@@ -18,7 +18,7 @@ double _Complex twist4(int len, double _Complex a, int n);
 double _Complex comb(double _Complex a, int n);
 
 
-/*[[[ƒƒCƒ“ŠÖ”[[[*/
+/*ãƒ¼ãƒ¼ãƒ¼ãƒ¡ã‚¤ãƒ³é–¢æ•°ãƒ¼ãƒ¼ãƒ¼*/
 int main(void) {
 	int p,n;
 	double _Complex q;
@@ -43,7 +43,7 @@ int main(void) {
 }
 
 
-/*[[[ƒTƒuŠÖ”[[[*/
+/*ãƒ¼ãƒ¼ãƒ¼ã‚µãƒ–é–¢æ•°ãƒ¼ãƒ¼ãƒ¼*/
 double _Complex f(int p, int n, double _Complex q) {
 	double _Complex return_f=0, a = cexp(M_PI*I/N);
 	
@@ -64,7 +64,7 @@ double _Complex f(int p, int n, double _Complex q) {
 	return return_f;
 }
 
-/*[[[twist2()[[[*/
+/*ãƒ¼ãƒ¼ãƒ¼twist2()ãƒ¼ãƒ¼ãƒ¼*/
 double _Complex twist2(int len, double _Complex a, int n) {
 	int cnt,i;
 	double _Complex re_value = 0;
@@ -86,7 +86,7 @@ double _Complex twist2(int len, double _Complex a, int n) {
 	return re_value;
 }
 
-/*[[[twist3()[[[*/
+/*ãƒ¼ãƒ¼ãƒ¼twist3()ãƒ¼ãƒ¼ãƒ¼*/
 double _Complex twist3(int len, double _Complex a, int n) {
 	int cnt,i;
 	double _Complex re_value = 0;
@@ -106,7 +106,7 @@ double _Complex twist3(int len, double _Complex a, int n) {
 	return re_value;
 }
 
-/*[[[[twist4()[[[[*/
+/*ãƒ¼ãƒ¼ãƒ¼ãƒ¼twist4()ãƒ¼ãƒ¼ãƒ¼ãƒ¼*/
 double _Complex twist4(int len, double _Complex a, int n) {
 	int cnt,i;
 	double _Complex re_value = 0;
@@ -127,14 +127,14 @@ double _Complex twist4(int len, double _Complex a, int n) {
 	return;	
 }
 
-/*[[[[combination[[[[*/
-double _Complex comb(double _Complex a, int n) {		//[n k_]‚ÌŒvZ
+/*ãƒ¼ãƒ¼ãƒ¼ãƒ¼combinationãƒ¼ãƒ¼ãƒ¼ãƒ¼*/
+double _Complex comb(double _Complex a, int n) {		//[n k_]ã®è¨ˆç®—
 	int i,j,l;
 	int number=0,hikaku=k[0];
 	long double _Complex re_value=1;
 	
-	for(l=1; l<P; l++) {		//•ª•êk[l]‚ÌÅ‘å’l‚ÆA‚»‚Ì‚Ì”Ô†l‚ğæ“¾
-		if(hikaku < k[l]) {		//Šek[l]‚Ì‘å¬‚Ì”äŠr
+	for(l=1; l<P; l++) {		//åˆ†æ¯k[l]ã®æœ€å¤§å€¤ã¨ã€ãã®æ™‚ã®ç•ªå·lã‚’å–å¾—
+		if(hikaku < k[l]) {		//å„k[l]ã®å¤§å°ã®æ¯”è¼ƒ
 			number=l;
 			hikaku=k[l];
 		}
@@ -143,12 +143,12 @@ double _Complex comb(double _Complex a, int n) {		//[n k_]‚ÌŒvZ
 	
 	if(n==0 || n==1 || n==N-1) return 1;
 	else {
-		for(i=n; i>hikaku; i--) re_value *= sin(i*M_PI/N);	//•ªq‚Ì[n]!‚ÌŒvZ
+		for(i=n; i>hikaku; i--) re_value *= sin(i*M_PI/N);	//åˆ†å­ã®[n]!ã®è¨ˆç®—
 		
-		for(i=number+1; i<P; i++) {							//Å‘å’lk[i]‚æ‚è”Ô†‚ª‘å‚«‚¢k[j]‚ÌŒvZ
+		for(i=number+1; i<P; i++) {							//æœ€å¤§å€¤k[i]ã‚ˆã‚Šç•ªå·ãŒå¤§ãã„k[j]ã®è¨ˆç®—
 			for(j=i; j>=2; j--) re_value /= sin(j*M_PI/N);
 		}
-		for(i=number-1; i>=0; i--) {						//Å‘å’lk[i]‚æ‚è”Ô†‚ª¬‚³‚¢k[j]‚ÌŒvZ
+		for(i=number-1; i>=0; i--) {						//æœ€å¤§å€¤k[i]ã‚ˆã‚Šç•ªå·ãŒå°ã•ã„k[j]ã®è¨ˆç®—
 			for(j=i; j>=2; j--) re_value /= sin(j*M_PI/N);
 		}
 	}
@@ -156,8 +156,8 @@ double _Complex comb(double _Complex a, int n) {		//[n k_]‚ÌŒvZ
 }
 
 double _Complex Q_minus(int n, double _Complex q) {
-	int i,l;			//ƒJƒEƒ“ƒg—p
-	long double _Complex re_value = 1;	//–ß‚è’l—p‚Ì•Ï”éŒ¾
+	int i,l;			//ã‚«ã‚¦ãƒ³ãƒˆç”¨
+	long double _Complex re_value = 1;	//æˆ»ã‚Šå€¤ç”¨ã®å¤‰æ•°å®£è¨€
 	if(n == 0) return 1;
 	else {
 		for(l=1; l<=n; l++){
@@ -168,8 +168,8 @@ double _Complex Q_minus(int n, double _Complex q) {
 }
 
 double _Complex Q_plus(int n, double _Complex q) {
-	int i,l;			//ƒJƒEƒ“ƒg—p
-	long double _Complex re_value = 1;	//–ß‚è’l—p‚Ì•Ï”éŒ¾
+	int i,l;			//ã‚«ã‚¦ãƒ³ãƒˆç”¨
+	long double _Complex re_value = 1;	//æˆ»ã‚Šå€¤ç”¨ã®å¤‰æ•°å®£è¨€
 	if(n == 0) return 1;
 	else {
 		for(l=1; l<=n; l++){
