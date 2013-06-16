@@ -30,7 +30,7 @@ int main(void) {
 	scanf("%hd %hd",&p,&t);
 
 	p_ = (p-1)/2;
-	for(n=2;n<25;n++){
+	for(n=2;n<500;n++){
 		Jall=0,J=0;
 		//三葉結び目の時の特殊値の計算
 		if(p==3){

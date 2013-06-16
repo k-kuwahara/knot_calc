@@ -1,4 +1,4 @@
-/*9_18Œ‹‚Ñ–Ú(41,17)‚Ìr(j),r'(j)‚ÌŒvZ*/
+/*9_18çµã³ç›®(41,17)ã®r(j),r'(j)ã®è¨ˆç®—*/
 
 #include<stdio.h>
 #include<math.h>
@@ -16,15 +16,15 @@ int main (void) {
 			else if(41<value){	value = value - 82;}
 			else { break;}
 		}
-		sigma[j] = value / abs(value);		//ƒĞ_j‚Ì”z—ñ
-		i[(abs(value)+1)/2]=j;				//i_r'(j)‚Ì”z—ñ
-//		printf("r(%2d):%3d - r'(%2d):%2d - ƒĞ_%2d:%2d\n",j,value,j,(abs(value)+1)/2,j,sigma[j]);
+		sigma[j] = value / abs(value);		//Ïƒ_jã®é…åˆ—
+		i[(abs(value)+1)/2]=j;				//i_r'(j)ã®é…åˆ—
+//		printf("r(%2d):%3d - r'(%2d):%2d - Ïƒ_%2d:%2d\n",j,value,j,(abs(value)+1)/2,j,sigma[j]);
 	}
 //	printf("\n");
 	
 	for(k=0; k<=20; k++){
 		sigma_i[k]=sigma[i[k]];
-//		printf("ƒĞ_i_%2d:%2d\n",k,sigma_i[k]);
+//		printf("Ïƒ_i_%2d:%2d\n",k,sigma_i[k]);
 	}
 	
 	for(n=1; n<=20; n++){
